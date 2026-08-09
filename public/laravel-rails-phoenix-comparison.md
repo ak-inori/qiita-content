@@ -6,11 +6,13 @@ tags:
   - Phoenix
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2026-08-09T16:38:49+09:00'
+id: 939e1a32483812035057
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、「あれって Phoenix だと何なんだっけ？」と都度調べることになりがちです。本記事では3つのエコシステムの対応関係を、パッケージ管理・REPL・デバッグ・テスト・定番ライブラリまで網羅的にまとめます。
