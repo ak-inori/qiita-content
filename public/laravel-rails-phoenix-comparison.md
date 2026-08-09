@@ -1,4 +1,17 @@
-# Laravel・Rails・Phoenix 対応表 — パッケージ管理からデバッグ、テストライブラリまで
+---
+title: Laravel・Rails・Phoenix 対応表 — パッケージ管理からデバッグ、テストライブラリまで
+tags:
+  - Laravel
+  - Rails
+  - Phoenix
+  - Elixir
+private: false
+updated_at: ''
+id: null
+organization_url_name: null
+slide: false
+ignorePublish: false
+---
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、「あれって Phoenix だと何なんだっけ？」と都度調べることになりがちです。本記事では3つのエコシステムの対応関係を、パッケージ管理・REPL・デバッグ・テスト・定番ライブラリまで網羅的にまとめます。
 
