@@ -21,7 +21,7 @@ PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|
-| 言語 | PHP 8.3+ | Ruby 3.3+ / 4.0 | Elixir 1.18+ / 1.20 |
+| 言語 | PHP 8.3+ | Ruby 3.2+（Rails 8.1 の必須要件、推奨 3.4+） | Elixir 1.18+ / 1.20 |
 | フレームワーク | Laravel 13 | Rails 8.1 | Phoenix 1.8 |
 
 ---
@@ -71,7 +71,7 @@ mix archive.install hex phx_new --force     # gem install rails 相当
 | プロジェクト作成 | `laravel new blog` | `rails new blog` | `mix phx.new blog` |
 | 開発サーバー起動 | `php artisan serve`（:8000） | `bin/rails server`（:3000） | `mix phx.server`（:4000） |
 | ルーティング一覧 | `php artisan route:list` | `bin/rails routes` | `mix phx.routes` |
-| DB作成 | （migrate に内包） | `bin/rails db:create` | `mix ecto.create` |
+| DB作成 | 標準コマンドなし（DB は事前作成） | `bin/rails db:create` | `mix ecto.create` |
 | マイグレーション | `php artisan migrate` | `bin/rails db:migrate` | `mix ecto.migrate` |
 | ロールバック | `php artisan migrate:rollback` | `bin/rails db:rollback` | `mix ecto.rollback` |
 | マイグレーション生成 | `php artisan make:migration` | `bin/rails g migration` | `mix ecto.gen.migration` |
@@ -185,8 +185,8 @@ Laravel の `dd()` に一番近そうに見える Elixir の `dbg()` は、実�
 | 実行 | `php artisan test` | `bin/rails test` / `bundle exec rspec` | `mix test` |
 | ファイル指定 | `php artisan test tests/Feature/FooTest.php` | `rails test test/models/foo_test.rb` | `mix test test/blog/foo_test.exs` |
 | 行指定 | `--filter`（メソッド名） | `rspec spec/foo_spec.rb:42` | `mix test test/foo_test.exs:42` |
-| 失敗したものだけ再実行 | `--order-by=defects`（要キャッシュ） | `rspec --only-failures`（要設定） | **`mix test --failed`（標準装備）** |
-| 並列実行 | `php artisan test --parallel` | `parallelize`（Rails標準） | `async: true`（ExUnit 標準・デフォルトで並列） |
+| 前回失敗したテストの扱い | `--order-by=defects`（失敗分を先に実行） | `rspec --only-failures`（要設定） | **`mix test --failed`（標準装備）** |
+| 並列実行 | `php artisan test --parallel` | `parallelize`（Rails標準） | `async: true` を付けた test case を並列実行 |
 | カバレッジ | `--coverage`（Xdebug/PCOV） | simplecov | `mix test --cover` / excoveralls |
 | watch モード | phpunit-watcher | guard | mix_test_watch |
 
@@ -194,7 +194,7 @@ ExUnit は「言語に最初から入っているテストフレームワーク�
 
 ```elixir
 defmodule Blog.AccountsTest do
-  use Blog.DataCase, async: true   # ← DBテストも並列実行（SQL Sandbox）
+  use Blog.DataCase, async: true   # ← DB を使う test case も並列実行（SQL Sandbox）
 
   describe "register_user/1" do
     test "creates a user with valid attrs" do
@@ -205,7 +205,7 @@ defmodule Blog.AccountsTest do
 end
 ```
 
-`async: true` は Ecto の SQL Sandbox（テストごとにトランザクション分離）と組み合わさっており、**DB を触るテストをデフォルトで安全に並列化**できます。
+`async: true` は Ecto の SQL Sandbox（テストごとにトランザクション分離）と組み合わせることで、**DB を触る test case も安全に並列化**できます。ただし並列になるのは `async: true` を付けた test case 同士で、同じ case 内の test は直列に実行されます。
 
 ---
 
@@ -260,7 +260,7 @@ end
 | リアルタイムUI | Livewire | Hotwire（Turbo/Stimulus） | **LiveView（標準）** |
 | プレゼンス管理 | — | — | Phoenix.Presence（標準） |
 
-Elixir はここが本領で、Sidekiq が Redis を要求するのに対し **Oban は PostgreSQL だけで動きます**（BEAM の並行性でポーリングが安く済むため）。WebSocket・リアルタイム系も外部ミドルウェアなしでフレームワーク標準です。
+Elixir はここが本領で、Sidekiq が Redis を要求するのに対し **Oban はアプリのデータベースだけで動きます**（PostgreSQL が第一級サポートですが、v2.18 以降は MySQL 8.0+ や SQLite3 にも対応。BEAM の並行性でポーリングが安く済むため）。WebSocket・リアルタイム系も外部ミドルウェアなしでフレームワーク標準です。
 
 ### メール・その他
 
