@@ -7,8 +7,8 @@ tags:
   - Elixir
   - 設計
 private: true
-updated_at: ''
-id: null
+updated_at: '2026-08-13T13:12:21+09:00'
+id: e716638c92c3fba4e10e
 organization_url_name: null
 slide: false
 ignorePublish: false

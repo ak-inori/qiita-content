@@ -7,8 +7,8 @@ tags:
   - Elixir
   - Composer
 private: true
-updated_at: ''
-id: null
+updated_at: '2026-08-13T13:12:20+09:00'
+id: 59ef9ff5937475c59d1b
 organization_url_name: null
 slide: false
 ignorePublish: false
