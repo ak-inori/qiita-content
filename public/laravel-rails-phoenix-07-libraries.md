@@ -1,17 +1,19 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（7/8）定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで'
+title: Laravel・Rails・Phoenix 対応表（7/8）定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで
 tags:
   - Laravel
   - Rails
   - Phoenix
   - Elixir
-  - Ecto
+  - ecto
 private: true
-updated_at: '2026-08-13T13:12:21+09:00'
+updated_at: '2026-08-13T13:42:25+09:00'
 id: b8e0dbfeafc0ead6f4b0
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 Laravel や Rails で「これに使うライブラリはあれ」と即答できる定番の選択肢が、Phoenix では何に対応するのか（またはその逆）を、用途別の対応表とコード例でまとめます。ORM・テスト補助・HTTPクライアント・認証認可・非同期/リアルタイム・メール・コード品質の7カテゴリを扱います。

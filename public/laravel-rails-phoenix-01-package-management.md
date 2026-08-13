@@ -1,5 +1,5 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（1/8）パッケージ管理 — Composer / Bundler / Mix'
+title: Laravel・Rails・Phoenix 対応表（1/8）パッケージ管理 — Composer / Bundler / Mix
 tags:
   - Laravel
   - Rails
@@ -7,11 +7,13 @@ tags:
   - Elixir
   - Composer
 private: true
-updated_at: '2026-08-13T13:12:20+09:00'
+updated_at: '2026-08-13T13:42:25+09:00'
 id: 59ef9ff5937475c59d1b
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、最初に触るのがパッケージ管理です。本記事では Composer / Bundler / Mix の対応関係を、日常コマンドからバージョン制約の記法、ロックファイルの運用、プライベートパッケージ、モノレポ構成、依存解決アルゴリズムの違いまで掘り下げてまとめます。

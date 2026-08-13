@@ -1,5 +1,5 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（8/8）3つのエコシステムの思想の違い'
+title: Laravel・Rails・Phoenix 対応表（8/8）3つのエコシステムの思想の違い
 tags:
   - Laravel
   - Rails
@@ -7,11 +7,13 @@ tags:
   - Elixir
   - 設計
 private: true
-updated_at: '2026-08-13T13:12:21+09:00'
+updated_at: '2026-08-13T13:42:26+09:00'
 id: e716638c92c3fba4e10e
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 コマンドやライブラリの対応表を眺めていると、「対応する行はあるのに、なぜか同じものに見えない」箇所がいくつも出てきます。`bundle exec` に相当するコマンドが Elixir に存在しない。Sidekiq に相当する Oban が Redis を要求しない。`$user->save()` に相当するはずの操作が `Repo.insert(changeset)` という別の形をしている。

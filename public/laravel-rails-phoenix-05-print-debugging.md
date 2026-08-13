@@ -1,17 +1,19 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（5/8）プリントデバッグ — dd() / pp / IO.inspect'
+title: Laravel・Rails・Phoenix 対応表（5/8）プリントデバッグ — dd() / pp / IO.inspect
 tags:
   - Laravel
   - Rails
   - Phoenix
   - Elixir
-  - デバッグ
+  - debug
 private: true
-updated_at: '2026-08-13T13:12:21+09:00'
+updated_at: '2026-08-13T13:42:26+09:00'
 id: ab069ea3cc797b16e20d
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 「とりあえず変数の中身を見たい」ときに手が伸びる関数——Laravel なら `dd()`、Ruby なら `pp`、Elixir なら `IO.inspect`。本記事では、この3エコシステムのプリントデバッグ手段を対応表にまとめたうえで、`IO.inspect` のオプション、`dbg()` マクロの仕組み、機密情報を出力から隠す方法、ログ出力の対比まで深掘りします。

@@ -1,5 +1,5 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（2/8）プロジェクト作成と日常のコマンド — artisan / rails / mix'
+title: Laravel・Rails・Phoenix 対応表（2/8）プロジェクト作成と日常のコマンド — artisan / rails / mix
 tags:
   - Laravel
   - Rails
@@ -7,11 +7,13 @@ tags:
   - Elixir
   - artisan
 private: true
-updated_at: '2026-08-13T13:12:20+09:00'
+updated_at: '2026-08-13T13:42:25+09:00'
 id: bc7fb3d522c04dd45205
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、最初に手が止まるのは「`php artisan make:model` って Phoenix だと何？」「`rails db:reset` 相当は？」といったコマンドの対応関係です。本記事では、プロジェクト作成から日常の開発コマンド（サーバー起動・ジェネレータ・マイグレーション・独自コマンドの作り方）までを3エコシステム並べて整理します。

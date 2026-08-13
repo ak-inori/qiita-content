@@ -1,17 +1,19 @@
 ---
-title: 'Laravel・Rails・Phoenix 対応表（4/8）インラインデバッグ — binding.pry と IEx.pry の世界'
+title: Laravel・Rails・Phoenix 対応表（4/8）インラインデバッグ — binding.pry と IEx.pry の世界
 tags:
   - Laravel
   - Rails
   - Phoenix
   - Elixir
-  - デバッグ
+  - debug
 private: true
-updated_at: '2026-08-13T13:12:21+09:00'
+updated_at: '2026-08-13T13:42:25+09:00'
 id: 0f999ab54f620d829366
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 「コードの途中で実行を止めて、その場の変数を触りながら原因を探る」——Rails の `binding.pry` に代表されるインラインデバッグは、3つのエコシステムでそれぞれ流儀が違います。Ruby は同種のツールが3つ並存して使い分けが必要、PHP は REPL 系（PsySH）と IDE 系（Xdebug）の二本立て、Elixir は **「iex 配下で動かしていること」が大前提**という独自の制約があります。
