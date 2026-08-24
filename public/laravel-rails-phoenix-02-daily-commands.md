@@ -20,7 +20,7 @@ PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（
 
 本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第2回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|
@@ -63,7 +63,7 @@ Rails の `bin/rails` はプロジェクト直下の binstub で、Bundler 経�
 | シード投入 | `php artisan db:seed` | `bin/rails db:seed` | `mix run priv/repo/seeds.exs` |
 | ワンオフ実行 | `php artisan tinker --execute="…"` | `bin/rails runner "…"` | `mix run -e "…"` |
 
-※1: Laravel はデフォルトが SQLite で、`laravel new` の時点で `database/database.sqlite` の作成とマイグレーションまで済ませてくれます。MySQL / PostgreSQL を使う場合は `.env` の `DB_*` を書き換えてから `php artisan migrate` を実行します（`rails db:create` / `mix ecto.create` のような DB 作成専用コマンドはありません）。
+※1: Laravel はデフォルトが SQLite で、`laravel new` の時点で `database/database.sqlite` の作成とマイグレーションまで済ませてくれます。MySQL / PostgreSQL を使う場合は `.env` の `DB_*` を書き換えてから `php artisan migrate` を実行します。`rails db:create` / `mix ecto.create` のような DB 作成専用コマンドはありませんが、近年の Laravel は `migrate` 実行時にデータベースが存在しなければ作成を試みます（接続ユーザーに CREATE 権限がない環境では事前作成が必要です）。
 
 ロールバックの「何個戻すか」の指定は三者三様です。
 
@@ -159,7 +159,7 @@ def index(conn, _params) do
 end
 ```
 
-Rails のscaffold が `Post.all` とモデル直呼びのコントローラを生成するのと対照的で、**「Web 層とドメイン層の分離」をジェネレータのレベルで強制している**のが Phoenix の設計です。ジェネレータの粒度も context 概念に沿って段階的になっています。
+Rails の scaffold が `Post.all` とモデル直呼びのコントローラを生成するのと対照的で、**「Web 層とドメイン層の分離」をジェネレータのレベルで強制している**のが Phoenix の設計です。ジェネレータの粒度も context 概念に沿って段階的になっています。
 
 - `phx.gen.schema` — スキーマ + マイグレーションだけ（`rails g model` 相当）
 - `phx.gen.context` — 上に加えて context モジュール + テスト
@@ -185,7 +185,7 @@ Rails の `g scaffold` が「全部入りか否か」の二択なのに対し、
 
 | やりたいこと | Laravel | Rails | Phoenix |
 |---|---|---|---|
-| 全部消して再構築 | `migrate:fresh` | `db:reset` | `mix ecto.reset` ※3 |
+| 全部消して再構築 | `migrate:fresh` | `db:reset` | `mix ecto.reset`（`phx.new` 生成エイリアス）※3 |
 | 再構築 + シード | `migrate:fresh --seed` | `db:reset`（seed 込み） | `ecto.reset`（seeds.exs 込み） |
 | ロールバックで巻き戻して再適用 | `migrate:refresh` | `db:migrate:reset` ※4 | —（drop して作り直す） |
 | 「よしなに」最新化 | — | `db:prepare` | — |

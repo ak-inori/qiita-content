@@ -20,7 +20,7 @@ agreed_posting_campaign_term: false
 
 本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第5回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|
@@ -163,7 +163,7 @@ Elixir の `Kernel.tap/2` / `then/2`（1.12+）は Ruby の `Object#tap` / `then
 
 ## dbg() の深掘り — 関数ではなくマクロ
 
-元記事シリーズでも触れたとおり、Laravel の `dd()` に一番近そうに見える Elixir の `dbg()` は、実際には **dump して die しない**（実行継続・値を返す）ので `dump()` 側の対応です。そのうえで `dump()` より賢い。理由は `dbg` が**関数ではなくマクロ**だからです。
+Laravel の `dd()` に一番近そうに見える Elixir の `dbg()` は、実際には **dump して die しない**（実行継続・値を返す）ので `dump()` 側の対応です。そのうえで `dump()` より賢い。理由は `dbg` が**関数ではなくマクロ**だからです。
 
 関数の `IO.inspect` は「評価済みの値」しか受け取れませんが、マクロの `dbg` はコンパイル時に**式の AST（構文木）ごと**受け取ります。だから「どのファイルの何行目で」「どんなコードが」「何に評価されたか」まで表示でき、パイプラインを渡せば分解して各ステップを個別に評価・表示できます。
 
@@ -270,11 +270,11 @@ Laravel の `$hidden` は `toArray()` / `toJson()` からの除外であって�
 |---|---|---|---|
 | 既定の出力先 | ブラウザ（HTML）/ CLI | サーバーのターミナル・ログ | **サーバーのターミナル** |
 | ビューに埋めて見る | `{{ dump($post) }}` | `<%= debug @post %>`（YAML表示ヘルパ） | `<pre><%= inspect(@post, pretty: true) %></pre>` |
-| レスポンスを汚さず横取り | **`php artisan dump-server`**（beyondcode/laravel-dump-server） | — | —（もともと端末に出る） |
+| レスポンスを汚さず横取り | **Telescope の Dump ウォッチャー**（`php artisan dump-server` は後述の注意あり） | — | —（もともと端末に出る） |
 | ブラウザ内コンソール | — | web-console gem（開発時デフォルト、`console` ヘルパ） | — |
 | 専用GUIツール | Telescope の Dump ウォッチャー / Ray（Spatie製・有償） | — | LiveDashboard（メトリクス寄り） |
 
-Laravel の `dump()` / `dd()` は Web リクエスト中ならレスポンス（ブラウザ）に出るため、**API のレスポンス JSON を壊す**のが難点です。beyondcode/laravel-dump-server を入れて `php artisan dump-server` を立てておくと、`dump()` の出力がレスポンスに混ざらず dump-server 側のターミナルに集約されます。Telescope を使っているなら Dump ウォッチャー（Telescope の Dumps 画面を開いている間だけ記録）という選択肢もあります。
+Laravel の `dump()` / `dd()` は Web リクエスト中ならレスポンス（ブラウザ）に出るため、**API のレスポンス JSON を壊す**のが難点です。Telescope を使っているなら Dump ウォッチャー（Telescope の Dumps 画面を開いている間だけ記録）でレスポンスを汚さずに確認できます。開発環境に Laravel Herd を使っている場合は Herd の Dumps 画面も同じ用途に使えます。この分野の古参である beyondcode/laravel-dump-server（`php artisan dump-server`）は、執筆時点の最新版（2.1.0）が **Laravel 12 までの対応**なので、Laravel 13 では対応状況を確認してから導入してください。
 
 Rails / Phoenix は「開発サーバーを起動したターミナルに出る」が基本なので、この問題自体が起きにくい構図です。Rails のビューには古参の `debug` ヘルパ（オブジェクトを YAML で `<pre>` 表示）があり、Phoenix / LiveView では同じことを `inspect(..., pretty: true)` を HEEx に埋めて行います。
 
@@ -336,7 +336,7 @@ config :logger, compile_time_purge_matching: [[level_lower_than: :info]]
 - [Credo.Check.Warning.Dbg](https://hexdocs.pm/credo/Credo.Check.Warning.Dbg.html) / [Credo.Check.Warning.IoInspect](https://hexdocs.pm/credo/Credo.Check.Warning.IoInspect.html)
 - [Laravel: Helpers（`dd` / `dump`）](https://laravel.com/docs/13.x/helpers) / [Laravel: Logging](https://laravel.com/docs/13.x/logging) / [Laravel: Eloquent Serialization（`$hidden`）](https://laravel.com/docs/13.x/eloquent-serialization)
 - [laravel/framework #47507 — `toRawSql` / `dumpRawSql` / `ddRawSql`](https://github.com/laravel/framework/pull/47507)
-- [beyondcode/laravel-dump-server](https://github.com/beyondcode/laravel-dump-server) / [Laravel Telescope](https://laravel.com/docs/13.x/telescope)
+- [beyondcode/laravel-dump-server](https://github.com/beyondcode/laravel-dump-server) / [Laravel Telescope](https://laravel.com/docs/13.x/telescope) / [Laravel Herd: Dumps](https://herd.laravel.com/docs/macos/debugging/dumps)
 - [Rails at Scale: Fixing a footgun in ActiveRecord::Core#inspect（`attributes_for_inspect`）](https://railsatscale.com/2024-04-30-fixing-a-footgun-in-activerecord-core-inspect/)
 - [Rails API: `filter_attributes`](https://api.rubyonrails.org/classes/ActiveRecord/Core/ClassMethods.html) / [ActiveSupport::TaggedLogging](https://api.rubyonrails.org/classes/ActiveSupport/TaggedLogging.html)
 - [Logger（Hexdocs） — メタデータと `compile_time_purge_matching`](https://hexdocs.pm/logger/Logger.html)

@@ -20,7 +20,7 @@ Laravel / Rails 経験者が Phoenix に入門するとき（またはその逆�
 
 本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第6回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|

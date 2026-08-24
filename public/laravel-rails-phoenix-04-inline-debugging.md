@@ -20,7 +20,7 @@ agreed_posting_campaign_term: false
 
 本記事では PHP/Laravel・Ruby/Rails・Elixir/Phoenix のインラインデバッグ手段を対応表で整理し、それぞれの使い分け・落とし穴・テスト実行中に止める方法・エディタ統合までまとめます。本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第4回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|

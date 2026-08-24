@@ -20,7 +20,7 @@ Laravel や Rails で「これに使うライブラリはあれ」と即答で�
 
 本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第7回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|
@@ -144,7 +144,7 @@ HTTP モックは、後述する Req を使っているなら **Req.Test**（Req
 | JSON シリアライズ | API Resources | jbuilder / Alba / AMS | JSON ビューモジュール + Jason |
 | GraphQL | Lighthouse | graphql-ruby | Absinthe |
 
-Elixir の HTTP クライアントは世代交代が激しかった領域ですが、現在は **Req** が事実上の推奨です（Phoenix 1.8 の新規プロジェクトにもデフォルトで入ります）。売りは「batteries-included」で、次がすべて**デフォルトで有効**です。
+Elixir の HTTP クライアントは世代交代が激しかった領域ですが、現在は **Req** が事実上の推奨です（Phoenix 1.8 の `phx.new` が生成するプロジェクトでも、デフォルト構成〈mailer あり〉なら Swoosh の HTTP クライアントとして最初から含まれます。`--no-mailer` の場合は自分で追加します。同梱の位置づけはあくまで Swoosh の配送用ですが、依存としては入っているので、アプリの HTTP 呼び出しにそのまま使えます）。売りは「batteries-included」で、次がすべて**デフォルトで有効**です。
 
 - レスポンスの自動 JSON デコード・自動解凍
 - リダイレクト追従
@@ -173,7 +173,7 @@ JSON API のレスポンス生成は、Phoenix ではシリアライザライブ
 | API トークン認証 | Sanctum | devise-jwt など | Guardian（JWT） |
 | 認可 | Gates / Policies（標準） | Pundit / CanCanCan | Bodyguard / LetMe |
 
-※1: 長年の定番だった Breeze / Jetstream は Laravel 12 でインストーラから外れ、React / Vue / Livewire の3種の公式スターターキット（内部は Fortify）に世代交代しています。
+※1: 長年の定番だった Breeze / Jetstream は Laravel 12 でインストーラから外れ、React / Vue / Svelte / Livewire の4種の公式スターターキット（内部は Fortify）に世代交代しています。
 
 3エコシステム共通の潮流として、**「認証ライブラリを入れる」から「認証コードを生成して自分のアプリに持つ」への移行**が進んでいます。
 

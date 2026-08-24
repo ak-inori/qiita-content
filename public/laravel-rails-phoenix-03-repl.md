@@ -20,7 +20,7 @@ agreed_posting_campaign_term: false
 
 本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第3回です。
 
-対象バージョン（執筆時点）:
+対象バージョン（2026年8月執筆時点）:
 
 | | PHP / Laravel | Ruby / Rails | Elixir / Phoenix |
 |---|---|---|---|
@@ -95,7 +95,7 @@ iex(2)> Blog.Accounts.get_user!(1) |> Map.get(:email)
 | 環境変数で指定 | — | `$IRBRC` | `IEX_HOME` |
 | tinker/Rails 固有 | `config/tinker.php` | — | — |
 
-読み込みの挙動に重要な違いがあります。**IEx は「カレントの `.iex.exs` → `~/.iex.exs`」の順に探し、最初に見つかった1つだけを評価します**（両方は読まれません）。IRB は探索順（`$IRBRC` → XDG → `~/.irbrc` → カレント）で最初の1つを読み、PsySH はユーザー設定に加えてプロジェクトの `.psysh.php` も読みます（信頼していないプロジェクトでは制限モードになりローカル設定をスキップ）。
+読み込みの挙動に重要な違いがあります。**IEx は「カレントの `.iex.exs` → `IEX_HOME` 配下（既定は `~`）の `.iex.exs`」の順に探し、最初に見つかった1つだけを評価します**（両方は読まれません。`IEX_HOME` はファイルではなく、グローバルの `.iex.exs` を探すディレクトリの指定です）。IRB は探索順（`$IRBRC` → XDG → `~/.irbrc` → カレント）で最初の1つを読み、PsySH はユーザー設定に加えてプロジェクトの `.psysh.php` も読みます（信頼していないプロジェクトでは制限モードになりローカル設定をスキップ）。
 
 ### プロジェクト用 .iex.exs の定番パターン
 
@@ -170,7 +170,7 @@ IRB 側も近年のバージョンで `show_source`（`$`）、`ls`、`whereami`
 
 ## iex -S mix phx.server — サーバーと REPL の同居
 
-元記事シリーズでも触れた、Elixir 固有にして最大の売りがこれです。
+Elixir 固有にして最大の売りがこれです。
 
 ```elixir
 $ iex -S mix phx.server
@@ -231,7 +231,7 @@ $ bin/blog remote        # 稼働中の blog ノードに接続
 iex(blog@prod-1)1> :sys.get_state(Blog.SomeWorker)   # 生きているプロセスの状態を直接見る
 ```
 
-内部的には Erlang の分散機能（`--remsh`）で、`iex --sname console --cookie <cookie> --remsh blog@prod-1` を手で打つのと同等です。接続先のシェルを終了してもノード本体は落ちません（ただし後述の BREAK メニューで `q` を押すと**リモートノードごと落ちる**ので要注意）。新規プロセス起動型と違い、メモリ上の状態（ETS テーブル、GenServer の内部状態、稼働中のプロセス一覧）をそのまま観察できるのが決定的な違いで、本番障害の調査能力が一段変わります。
+内部的には Erlang の分散機能（`--remsh`）で、`iex --sname console --cookie <cookie> --remsh blog@prod-1` を手で打つのと同等です。接続先のシェルは Ctrl+C 2回で終了でき、落ちるのは手元の接続用ノードだけでリモート本体には影響しません。本当の罠は別にあります: リモートシェルに打ち込んだコードは**リモートノード上で実行される**ため、`System.stop()` や `:init.stop()` を実行すると**本番ノード本体が停止**します。新規プロセス起動型と違い、メモリ上の状態（ETS テーブル、GenServer の内部状態、稼働中のプロセス一覧）をそのまま観察できるのが決定的な違いで、本番障害の調査能力が一段変わります。
 
 ## 履歴・補完・マルチライン編集
 
@@ -268,7 +268,7 @@ BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
        (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
 ```
 
-`a` で VM ごと終了、`c` で何事もなかったように復帰、`p` でプロセス情報の表示などができます。「Ctrl+C 2回で終了」は実際には「BREAK メニューを開いてもう一度 Ctrl+C で abort」という操作です。これは IEx ではなく **Erlang VM 自体の機能**なので、本番ノードに `remote` 接続中に押すとノードごと落とせてしまう点だけ注意してください（安全に抜けるなら Ctrl+G から）。
+`a` で VM ごと終了、`c` で何事もなかったように復帰、`p` でプロセス情報の表示などができます。「Ctrl+C 2回で終了」は実際には「BREAK メニューを開いてもう一度 Ctrl+C で abort」という操作です。これは IEx ではなく **Erlang VM 自体の機能**なので、abort で落ちるのは「いま端末が繋がっているVM」です。`iex -S mix phx.server` を直接動かしている端末や、コンテナに `docker attach` している場合は**サーバーごと止まります**。一方 `remote`（remsh）接続中なら落ちるのは手元の接続用ノードだけで、リモート本体は無事です（リモート側を止めてしまうのは前述の `System.stop()` 系の方です）。
 
 Ctrl+G の「User switch command」はさらに独特で、1つの端末の中で複数のシェルを起動して切り替えたり（`s` で新シェル、`c 2` で2番へ切替）、`r` コマンドで他ノードのリモートシェルに接続したりできます。tmux のウィンドウ機能が VM に内蔵されているようなイメージです。
 
