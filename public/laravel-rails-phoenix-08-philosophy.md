@@ -6,7 +6,7 @@ tags:
   - Phoenix
   - Elixir
   - 設計
-private: true
+private: false
 updated_at: '2026-08-24T18:27:37+09:00'
 id: e716638c92c3fba4e10e
 organization_url_name: null
@@ -18,7 +18,18 @@ agreed_posting_campaign_term: false
 
 コマンドやライブラリの対応表を眺めていると、「対応する行はあるのに、なぜか同じものに見えない」箇所がいくつも出てきます。`bundle exec` に相当するコマンドが Elixir に存在しない。Sidekiq に相当する Oban が Redis を要求しない。`$user->save()` に相当するはずの操作が `Repo.insert(changeset)` という別の形をしている。
 
-こうした差は個別の設計判断ではなく、**エコシステムの根っこにある思想の違いが表面に染み出したもの**です。本記事では Laravel・Rails・Phoenix の「感触」の違いを、①ツールチェーンの構成、②ランタイムのプロセスモデル、③データの扱い方、の3つの軸で掘り下げます。本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第8回です。
+こうした差は個別の設計判断ではなく、**エコシステムの根っこにある思想の違いが表面に染み出したもの**です。本記事では Laravel・Rails・Phoenix の「感触」の違いを、①ツールチェーンの構成、②ランタイムのプロセスモデル、③データの扱い方、の3つの軸で掘り下げます。本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の8本目です。
+
+シリーズ一覧:
+
+1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
+2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
+3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
+4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
+5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
+6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
+7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
+8. 3つのエコシステムの思想の違い**（本記事）**
 
 対象バージョン（2026年8月執筆時点）:
 
@@ -318,3 +329,7 @@ Elixir が型を、PHP がパイプラインを取り込み、Ruby が並列実�
 - [PHP 8.5 Release Announcement](https://www.php.net/releases/8.5/en.php)
 - [FrankenPHP: Worker Mode](https://frankenphp.dev/docs/worker/) / [Laravel Octane](https://laravel.com/docs/13.x/octane)
 - [Erlang: Processes (BEAM の軽量プロセス)](https://www.erlang.org/doc/system/ref_man_processes.html) / [Phoenix ドキュメント](https://hexdocs.pm/phoenix/overview.html)
+
+---
+
+シリーズはここまでです。最初の記事から読み返す: **[Laravel・Rails・Phoenix 対応表（1/8）パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)**

@@ -6,7 +6,7 @@ tags:
   - Phoenix
   - Elixir
   - REPL
-private: true
+private: false
 updated_at: '2026-08-24T18:27:38+09:00'
 id: 73d50b297a770bf22ec7
 organization_url_name: null
@@ -18,7 +18,18 @@ agreed_posting_campaign_term: false
 
 フレームワークを行き来するとき、真っ先に手に馴染ませたいのが対話モード（REPL）です。「Laravel の `tinker` に相当するものは Phoenix だと何？」「`reload!` は？」「サンドボックスモードは？」——本記事では PHP/Laravel の tinker（PsySH）、Ruby/Rails の rails console（IRB）、Elixir の IEx を、基本操作から設定ファイル、リモート接続、シェル固有の操作体系まで対応付けて解説します。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第3回です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の3本目です。
+
+シリーズ一覧:
+
+1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
+2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
+3. REPL — tinker / rails console / IEx**（本記事）**
+4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
+5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
+6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
+7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
+8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
 
 対象バージョン（2026年8月執筆時点）:
 
@@ -290,3 +301,7 @@ Ctrl+G の「User switch command」はさらに独特で、1つの端末の中�
 - [rails/rails#48984 — sandbox_by_default](https://github.com/rails/rails/pull/48984)
 - [Erlang/OTP 26 Highlights（シェル改善）](https://www.erlang.org/blog/otp-26-highlights/)
 - [Ecto.Adapters.SQL.Sandbox](https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.Sandbox.html)
+
+---
+
+次の記事: **[Laravel・Rails・Phoenix 対応表（4/8）インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)**

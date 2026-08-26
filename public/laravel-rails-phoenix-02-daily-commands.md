@@ -6,7 +6,7 @@ tags:
   - Phoenix
   - Elixir
   - artisan
-private: true
+private: false
 updated_at: '2026-08-24T18:27:38+09:00'
 id: bc7fb3d522c04dd45205
 organization_url_name: null
@@ -18,7 +18,18 @@ agreed_posting_campaign_term: false
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、最初に手が止まるのは「`php artisan make:model` って Phoenix だと何？」「`rails db:reset` 相当は？」といったコマンドの対応関係です。本記事では、プロジェクト作成から日常の開発コマンド（サーバー起動・ジェネレータ・マイグレーション・独自コマンドの作り方）までを3エコシステム並べて整理します。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第2回です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の2本目です。
+
+シリーズ一覧:
+
+1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
+2. プロジェクト作成と日常のコマンド — artisan / rails / mix**（本記事）**
+3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
+4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
+5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
+6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
+7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
+8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
 
 対象バージョン（2026年8月執筆時点）:
 
@@ -341,3 +352,7 @@ end
 - [mix phx.new](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.New.html) / [Contexts](https://hexdocs.pm/phoenix/contexts.html) / [Mix.Task](https://hexdocs.pm/mix/Mix.Task.html)
 - [mix ecto.migrate / rollback ほか Ecto SQL タスク](https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Migrate.html)
 - [Mix releases（本番でのワンオフ実行）](https://hexdocs.pm/mix/Mix.Tasks.Release.html)
+
+---
+
+次の記事: **[Laravel・Rails・Phoenix 対応表（3/8）REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)**
