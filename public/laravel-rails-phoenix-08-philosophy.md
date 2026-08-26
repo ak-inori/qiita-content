@@ -7,7 +7,7 @@ tags:
   - Elixir
   - 設計
 private: false
-updated_at: '2026-08-27T01:15:57+09:00'
+updated_at: '2026-08-27T02:20:47+09:00'
 id: e716638c92c3fba4e10e
 organization_url_name: null
 slide: false

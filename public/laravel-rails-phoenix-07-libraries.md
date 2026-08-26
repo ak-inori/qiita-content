@@ -7,7 +7,7 @@ tags:
   - Elixir
   - ecto
 private: false
-updated_at: '2026-08-27T01:15:38+09:00'
+updated_at: '2026-08-27T02:20:48+09:00'
 id: b8e0dbfeafc0ead6f4b0
 organization_url_name: null
 slide: false
