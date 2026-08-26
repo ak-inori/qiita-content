@@ -6,7 +6,7 @@ tags:
   - Phoenix
   - Elixir
   - ecto
-private: true
+private: false
 updated_at: '2026-08-24T18:27:37+09:00'
 id: b8e0dbfeafc0ead6f4b0
 organization_url_name: null
@@ -18,7 +18,18 @@ agreed_posting_campaign_term: false
 
 Laravel や Rails で「これに使うライブラリはあれ」と即答できる定番の選択肢が、Phoenix では何に対応するのか（またはその逆）を、用途別の対応表とコード例でまとめます。ORM・テスト補助・HTTPクライアント・認証認可・非同期/リアルタイム・メール・コード品質の7カテゴリを扱います。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第7回です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の7本目です。
+
+シリーズ一覧:
+
+1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
+2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
+3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
+4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
+5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
+6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
+7. 定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで**（本記事）**
+8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
 
 対象バージョン（2026年8月執筆時点）:
 
@@ -350,3 +361,7 @@ Elixir でライブラリを目利きするときのポイントを3つ。
 - [Swoosh](https://hexdocs.pm/swoosh/Swoosh.html) / [Phoenix LiveDashboard](https://hexdocs.pm/phoenix_live_dashboard/Phoenix.LiveDashboard.html)
 - [Credo](https://hexdocs.pm/credo/overview.html) / [Laravel Pint](https://laravel.com/docs/13.x/pint) / [RuboCop](https://rubocop.org/)
 - [Hex.pm](https://hex.pm) / [Ruby Toolbox](https://www.ruby-toolbox.com) / [Packagist](https://packagist.org)
+
+---
+
+次の記事: **[Laravel・Rails・Phoenix 対応表（8/8）3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)**

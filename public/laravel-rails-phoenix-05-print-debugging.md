@@ -6,7 +6,7 @@ tags:
   - Phoenix
   - Elixir
   - debug
-private: true
+private: false
 updated_at: '2026-08-24T18:27:37+09:00'
 id: ab069ea3cc797b16e20d
 organization_url_name: null
@@ -18,7 +18,18 @@ agreed_posting_campaign_term: false
 
 「とりあえず変数の中身を見たい」ときに手が伸びる関数——Laravel なら `dd()`、Ruby なら `pp`、Elixir なら `IO.inspect`。本記事では、この3エコシステムのプリントデバッグ手段を対応表にまとめたうえで、`IO.inspect` のオプション、`dbg()` マクロの仕組み、機密情報を出力から隠す方法、ログ出力の対比まで深掘りします。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8回）の第5回です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の5本目です。
+
+シリーズ一覧:
+
+1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
+2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
+3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
+4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
+5. プリントデバッグ — dd() / pp / IO.inspect**（本記事）**
+6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
+7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
+8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
 
 対象バージョン（2026年8月執筆時点）:
 
@@ -340,3 +351,7 @@ config :logger, compile_time_purge_matching: [[level_lower_than: :info]]
 - [Rails at Scale: Fixing a footgun in ActiveRecord::Core#inspect（`attributes_for_inspect`）](https://railsatscale.com/2024-04-30-fixing-a-footgun-in-activerecord-core-inspect/)
 - [Rails API: `filter_attributes`](https://api.rubyonrails.org/classes/ActiveRecord/Core/ClassMethods.html) / [ActiveSupport::TaggedLogging](https://api.rubyonrails.org/classes/ActiveSupport/TaggedLogging.html)
 - [Logger（Hexdocs） — メタデータと `compile_time_purge_matching`](https://hexdocs.pm/logger/Logger.html)
+
+---
+
+次の記事: **[Laravel・Rails・Phoenix 対応表（6/8）テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)**
