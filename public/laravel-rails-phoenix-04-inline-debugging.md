@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（4/8）インラインデバッグ — binding.pry と IEx.pry の世界
+title: 'Laravel・Rails・Phoenix 対応表: インラインデバッグ — binding.pry と IEx.pry の世界'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 「コードの途中で実行を止めて、その場の変数を触りながら原因を探る」——Rails の `binding.pry` に代表されるインラインデバッグは、3つのエコシステムでそれぞれ流儀が違います。Ruby は同種のツールが3つ並存して使い分けが必要、PHP は REPL 系（PsySH）と IDE 系（Xdebug）の二本立て、Elixir は **「iex 配下で動かしていること」が大前提**という独自の制約があります。
 
-本記事では PHP/Laravel・Ruby/Rails・Elixir/Phoenix のインラインデバッグ手段を対応表で整理し、それぞれの使い分け・落とし穴・テスト実行中に止める方法・エディタ統合までまとめます。本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の4本目です。
+本記事では PHP/Laravel・Ruby/Rails・Elixir/Phoenix のインラインデバッグ手段を対応表で整理し、それぞれの使い分け・落とし穴・テスト実行中に止める方法・エディタ統合までまとめます。本記事は Laravel・Rails・Phoenix 対応表シリーズの4本目です。
 
 シリーズ一覧:
 
@@ -311,4 +311,4 @@ BEAM 上ではすべてがプロセスなので、「どのプロセスで pry �
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（5/8）プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)**

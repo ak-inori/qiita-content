@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（7/8）定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで
+title: 'Laravel・Rails・Phoenix 対応表: 定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 Laravel や Rails で「これに使うライブラリはあれ」と即答できる定番の選択肢が、Phoenix では何に対応するのか（またはその逆）を、用途別の対応表とコード例でまとめます。ORM・テスト補助・HTTPクライアント・認証認可・非同期/リアルタイム・メール・コード品質の7カテゴリを扱います。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の7本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの7本目です。
 
 シリーズ一覧:
 
@@ -364,4 +364,4 @@ Elixir でライブラリを目利きするときのポイントを3つ。
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（8/8）3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: 3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)**

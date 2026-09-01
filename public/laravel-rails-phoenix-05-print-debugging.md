@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（5/8）プリントデバッグ — dd() / pp / IO.inspect
+title: 'Laravel・Rails・Phoenix 対応表: プリントデバッグ — dd() / pp / IO.inspect'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 「とりあえず変数の中身を見たい」ときに手が伸びる関数——Laravel なら `dd()`、Ruby なら `pp`、Elixir なら `IO.inspect`。本記事では、この3エコシステムのプリントデバッグ手段を対応表にまとめたうえで、`IO.inspect` のオプション、`dbg()` マクロの仕組み、機密情報を出力から隠す方法、ログ出力の対比まで深掘りします。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の5本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの5本目です。
 
 シリーズ一覧:
 
@@ -106,7 +106,7 @@ iex> IO.inspect([104, 101, 108, 108, 111], charlists: :as_lists)
 
 **出力先も変えられます。** `IO.inspect/3` の第1引数にデバイスを渡せるので、標準出力がテスト等で汚したくない場面では `IO.inspect(:stderr, x, label: "debug")` と stderr に逃がせます。
 
-ログメッセージに埋め込みたいときは、文字列を返す `Kernel.inspect/2` を使います（`IO.inspect` と同じオプションが効きます）。
+ログメッセージに埋め込みたいときは、文字列を返す `Kernel.inspect/2` を使います（`IO.inspect` と同じオプションが使えます）。
 
 ```elixir
 Logger.debug("params: #{inspect(params, pretty: true)}")
@@ -226,7 +226,7 @@ Credo の `Dbg` / `IoInspect` チェックはデフォルト構成に含まれ�
 
 ## 機密情報を inspect から隠す
 
-プリントデバッグとログの実運用で必ず問題になるのが「パスワードやトークンが出力に混ざる」ことです。3エコシステムとも「inspect / ログ時にマスクする」仕組みを持っていますが、**効く場所が違う**ので対比しておきます。
+プリントデバッグとログの実運用で必ず問題になるのが「パスワードやトークンが出力に混ざる」ことです。3エコシステムとも「inspect / ログ時にマスクする」仕組みを持っていますが、**マスクされる場所がそれぞれ違う**ので対比しておきます。
 
 | | Laravel | Rails | Elixir / Ecto |
 |---|---|---|---|
@@ -254,7 +254,7 @@ iex> IO.inspect(%MyApp.Accounts.User{id: 1, email: "a@example.com", password_has
 
 ### Rails: filter_parameters と filter_attributes
 
-Rails は伝統的に `config/initializers/filter_parameter_logging.rb` の `config.filter_parameters` でリクエストログをマスクしてきましたが、Rails 6 からは同じリストが **ActiveRecord の `inspect` にも効きます**（`filter_attributes` として継承。モデル単位の上書きも可能）。
+Rails は伝統的に `config/initializers/filter_parameter_logging.rb` の `config.filter_parameters` でリクエストログをマスクしてきましたが、Rails 6 からは同じリストが **ActiveRecord の `inspect` にも適用されます**（`filter_attributes` として継承。モデル単位の上書きも可能）。
 
 ```ruby
 class User < ApplicationRecord
@@ -269,7 +269,7 @@ irb> user
 
 ### Laravel: `$hidden` は serialization 専用
 
-Laravel の `$hidden` は `toArray()` / `toJson()` からの除外であって、**`dd($user)` や `var_dump` には効きません**。`dd()` はモデルの内部プロパティを生で表示するので、attributes 配列の中に password ハッシュもそのまま見えます。プリントデバッグの文脈では「Laravel にはモデル inspect のマスク機構がない」と覚えておくのが安全で、必要なら `dd($user->toArray())` と serialization 経由で見る（= `$hidden` を効かせる）のが簡単な回避策です。
+Laravel の `$hidden` は `toArray()` / `toJson()` からの除外であって、**`dd($user)` や `var_dump` では無効です**。`dd()` はモデルの内部プロパティを生で表示するので、attributes 配列の中に password ハッシュもそのまま見えます。プリントデバッグの文脈では「Laravel にはモデル inspect のマスク機構がない」と覚えておくのが安全で、必要なら `dd($user->toArray())` と serialization 経由で見る（= `$hidden` を通す）のが簡単な回避策です。
 
 ---
 
@@ -354,4 +354,4 @@ config :logger, compile_time_purge_matching: [[level_lower_than: :info]]
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（6/8）テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)**

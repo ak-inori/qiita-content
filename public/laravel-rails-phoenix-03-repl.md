@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（3/8）REPL — tinker / rails console / IEx
+title: 'Laravel・Rails・Phoenix 対応表: REPL — tinker / rails console / IEx'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 フレームワークを行き来するとき、真っ先に手に馴染ませたいのが対話モード（REPL）です。「Laravel の `tinker` に相当するものは Phoenix だと何？」「`reload!` は？」「サンドボックスモードは？」——本記事では PHP/Laravel の tinker（PsySH）、Ruby/Rails の rails console（IRB）、Elixir の IEx を、基本操作から設定ファイル、リモート接続、シェル固有の操作体系まで対応付けて解説します。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の3本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの3本目です。
 
 シリーズ一覧:
 
@@ -304,4 +304,4 @@ Ctrl+G の「User switch command」はさらに独特で、1つの端末の中�
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（4/8）インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)**

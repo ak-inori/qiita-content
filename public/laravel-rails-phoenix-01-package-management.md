@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（1/8）パッケージ管理 — Composer / Bundler / Mix
+title: 'Laravel・Rails・Phoenix 対応表: パッケージ管理 — Composer / Bundler / Mix'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、最初に触るのがパッケージ管理です。本記事では Composer / Bundler / Mix の対応関係を、日常コマンドからバージョン制約の記法、ロックファイルの運用、プライベートパッケージ、モノレポ構成、依存解決アルゴリズムの違いまで掘り下げてまとめます。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の1本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの1本目です。
 
 シリーズ一覧:
 
@@ -131,7 +131,7 @@ mix archive.install hex phx_new --force     # gem install rails 相当
 
 ## 依存解決アルゴリズムの違い
 
-普段は意識しませんが、「解決が終わらない」「エラーメッセージが謎」というときに効いてくる部分です。
+普段は意識しませんが、「解決が終わらない」「エラーメッセージが謎」というときに顔を出す部分です。
 
 | | Composer 2 | Bundler | Mix / Hex |
 |---|---|---|---|
@@ -283,4 +283,4 @@ mix igniter.new my_app --install ash,oban --with phx.new
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（2/8）プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)**

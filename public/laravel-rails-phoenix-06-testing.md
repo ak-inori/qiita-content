@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（6/8）テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit
+title: 'Laravel・Rails・Phoenix 対応表: テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 Laravel / Rails 経験者が Phoenix に入門するとき（またはその逆）、テストまわりは「概念はほぼ同じなのに語彙が全部違う」領域です。本記事では PHPUnit・Pest / Minitest・RSpec / ExUnit の対応関係を、アサーション・setup・DB分離戦略・タグ実行・flaky対策・CI高速化まで掘り下げて整理します。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の6本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの6本目です。
 
 シリーズ一覧:
 
@@ -405,4 +405,4 @@ Elixir 側で特筆すべきは2つ。`--partitions 4` はテストファイル�
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（7/8）定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: 定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)**

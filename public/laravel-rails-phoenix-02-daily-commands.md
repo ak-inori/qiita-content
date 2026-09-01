@@ -1,5 +1,5 @@
 ---
-title: Laravel・Rails・Phoenix 対応表（2/8）プロジェクト作成と日常のコマンド — artisan / rails / mix
+title: 'Laravel・Rails・Phoenix 対応表: プロジェクト作成と日常のコマンド — artisan / rails / mix'
 tags:
   - Laravel
   - Rails
@@ -18,7 +18,7 @@ agreed_posting_campaign_term: false
 
 PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（またはその逆）、最初に手が止まるのは「`php artisan make:model` って Phoenix だと何？」「`rails db:reset` 相当は？」といったコマンドの対応関係です。本記事では、プロジェクト作成から日常の開発コマンド（サーバー起動・ジェネレータ・マイグレーション・独自コマンドの作り方）までを3エコシステム並べて整理します。
 
-本記事は Laravel・Rails・Phoenix 対応表シリーズ（全8本）の2本目です。
+本記事は Laravel・Rails・Phoenix 対応表シリーズの2本目です。
 
 シリーズ一覧:
 
@@ -355,4 +355,4 @@ end
 
 ---
 
-次の記事: **[Laravel・Rails・Phoenix 対応表（3/8）REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)**
+次の記事: **[Laravel・Rails・Phoenix 対応表: REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)**
