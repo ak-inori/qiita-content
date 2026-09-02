@@ -7,7 +7,7 @@ tags:
   - Elixir
   - REPL
 private: false
-updated_at: '2026-08-27T13:19:54+09:00'
+updated_at: '2026-09-02T18:51:54+09:00'
 id: 73d50b297a770bf22ec7
 organization_url_name: null
 slide: false

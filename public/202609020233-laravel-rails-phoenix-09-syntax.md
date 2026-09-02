@@ -7,11 +7,13 @@ tags:
   - Elixir
   - パターンマッチ
 private: true
-updated_at: ''
-id: null
+updated_at: '2026-09-02T18:51:54+09:00'
+id: 2bce0e7b456d49c02df8
 organization_url_name: null
 slide: false
 ignorePublish: false
+posting_campaign_uuid: null
+agreed_posting_campaign_term: false
 ---
 
 ここまでのシリーズはパッケージ管理やデバッグといったツールチェーンを扱ってきましたが、本記事は言語そのものに降りて、PHP・Ruby・Elixir の**構文の対応関係**を整理します。フレームワークのコードを読み書きするときに地味に手が止まる「Ruby の `%w` って Elixir だと何？」「Elixir の `{:ok, user} = ...` に相当する書き方は？」「`reduce` の引数の順番どっちだっけ？」を一気に片付けるのが目的です。

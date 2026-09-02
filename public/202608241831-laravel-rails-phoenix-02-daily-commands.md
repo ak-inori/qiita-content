@@ -7,7 +7,7 @@ tags:
   - Elixir
   - artisan
 private: false
-updated_at: '2026-08-27T13:17:45+09:00'
+updated_at: '2026-09-02T18:51:54+09:00'
 id: bc7fb3d522c04dd45205
 organization_url_name: null
 slide: false
