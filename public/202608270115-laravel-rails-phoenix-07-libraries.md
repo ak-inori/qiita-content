@@ -7,7 +7,7 @@ tags:
   - Elixir
   - ecto
 private: false
-updated_at: '2026-08-27T02:20:48+09:00'
+updated_at: '2026-08-27T13:29:29+09:00'
 id: b8e0dbfeafc0ead6f4b0
 organization_url_name: null
 slide: false
@@ -28,7 +28,7 @@ Laravel や Rails で「これに使うライブラリはあれ」と即答で�
 4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
 5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
 6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
-7. 定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで**（本記事）**
+7. 定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで **（本記事）**
 8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
 
 対象バージョン（2026年8月執筆時点）:

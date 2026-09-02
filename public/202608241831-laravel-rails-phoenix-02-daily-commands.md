@@ -7,7 +7,7 @@ tags:
   - Elixir
   - artisan
 private: false
-updated_at: '2026-08-27T02:20:47+09:00'
+updated_at: '2026-08-27T13:17:45+09:00'
 id: bc7fb3d522c04dd45205
 organization_url_name: null
 slide: false
@@ -23,7 +23,7 @@ PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（
 シリーズ一覧:
 
 1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
-2. プロジェクト作成と日常のコマンド — artisan / rails / mix**（本記事）**
+2. プロジェクト作成と日常のコマンド — artisan / rails / mix **（本記事）**
 3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
 4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
 5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)

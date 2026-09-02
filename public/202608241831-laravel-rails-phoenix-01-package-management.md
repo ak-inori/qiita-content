@@ -7,7 +7,7 @@ tags:
   - Elixir
   - Composer
 private: false
-updated_at: '2026-08-27T02:20:48+09:00'
+updated_at: '2026-08-27T13:17:28+09:00'
 id: 59ef9ff5937475c59d1b
 organization_url_name: null
 slide: false
@@ -22,7 +22,7 @@ PHP/Laravel、Ruby/Rails の経験者が Elixir/Phoenix に入門するとき（
 
 シリーズ一覧:
 
-1. パッケージ管理 — Composer / Bundler / Mix**（本記事）**
+1. パッケージ管理 — Composer / Bundler / Mix **（本記事）**
 2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
 3. [REPL — tinker / rails console / IEx](https://qiita.com/ak-inori/items/73d50b297a770bf22ec7)
 4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
