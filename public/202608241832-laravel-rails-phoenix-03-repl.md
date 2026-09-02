@@ -7,7 +7,7 @@ tags:
   - Elixir
   - REPL
 private: false
-updated_at: '2026-08-27T02:20:47+09:00'
+updated_at: '2026-08-27T13:19:54+09:00'
 id: 73d50b297a770bf22ec7
 organization_url_name: null
 slide: false
@@ -24,7 +24,7 @@ agreed_posting_campaign_term: false
 
 1. [パッケージ管理 — Composer / Bundler / Mix](https://qiita.com/ak-inori/items/59ef9ff5937475c59d1b)
 2. [プロジェクト作成と日常のコマンド — artisan / rails / mix](https://qiita.com/ak-inori/items/bc7fb3d522c04dd45205)
-3. REPL — tinker / rails console / IEx**（本記事）**
+3. REPL — tinker / rails console / IEx **（本記事）**
 4. [インラインデバッグ — binding.pry と IEx.pry の世界](https://qiita.com/ak-inori/items/0f999ab54f620d829366)
 5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
 6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)

@@ -7,7 +7,7 @@ tags:
   - Elixir
   - 設計
 private: false
-updated_at: '2026-08-27T02:20:47+09:00'
+updated_at: '2026-08-27T13:29:54+09:00'
 id: e716638c92c3fba4e10e
 organization_url_name: null
 slide: false
@@ -29,7 +29,7 @@ agreed_posting_campaign_term: false
 5. [プリントデバッグ — dd() / pp / IO.inspect](https://qiita.com/ak-inori/items/ab069ea3cc797b16e20d)
 6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
 7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
-8. 3つのエコシステムの思想の違い**（本記事）**
+8. 3つのエコシステムの思想の違い **（本記事）**
 
 対象バージョン（2026年8月執筆時点）:
 

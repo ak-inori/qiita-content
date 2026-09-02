@@ -28,7 +28,7 @@ ignorePublish: false
 6. [テスト — PHPUnit・Pest / Minitest・RSpec / ExUnit](https://qiita.com/ak-inori/items/927201acc9e87d164501)
 7. [定番ライブラリ — ORM・認証・ジョブ・リアルタイムまで](https://qiita.com/ak-inori/items/b8e0dbfeafc0ead6f4b0)
 8. [3つのエコシステムの思想の違い](https://qiita.com/ak-inori/items/e716638c92c3fba4e10e)
-9. 言語シンタックス — リテラル・パターンマッチ・コレクション操作**（本記事）**
+9. 言語シンタックス — リテラル・パターンマッチ・コレクション操作 **（本記事）**
 
 対象バージョン（2026年9月執筆時点）:
 
